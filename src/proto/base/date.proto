@@ -1,0 +1,12 @@
+/*
+  Defines the date types used.
+*/
+syntax = "proto3";
+
+package base;
+
+message Date {
+  int32 year = 1;  // four digits, eg. 1992
+  int32 month = 2; // between 1-12
+  int32 day = 3;   // between 1-31
+}

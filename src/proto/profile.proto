@@ -1,0 +1,25 @@
+/*
+This defines a profile, which contains the primary details of 
+each user profile that uses the app.
+*/
+syntax = "proto3";
+
+package user;
+
+import "src/proto/base/date.proto";
+
+message Profile {
+  int32 id = 1;
+  ProfileState ps = 2;
+  string name = 3;
+  bool verified = 4;
+  bytes pfp = 5;
+  float premium_for = 6; // days the user a premium member for
+  base.Date join_date = 7;
+  repeated string tags = 8;
+
+  enum ProfileState {
+    ACTIVE = 0;
+    INACTIVE = 1;
+  }
+}
